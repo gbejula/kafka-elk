@@ -5,14 +5,14 @@
 input {
 	kafka {
 		bootstrap_servers => "localhost:9092"
-		topics => ["MetricbeatTutorial.msg"]
+		topics => ["kafka_testing"]
 	}
 }
 
 output {
 	elasticsearch {
 		hosts => ["localhost:9200"]
-		index => "MetricbeatTutorial.msg"
+		index => "kafka_testing"
 	}
 	stdout { codec => rubydebug }
 }
