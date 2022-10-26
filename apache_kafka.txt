@@ -1,0 +1,32 @@
+ZAB7UFMPANSBLUDMY
+
+
+
+
+logstash -f .\config\ --config.reload.automatic
+
+
+
+Apache kafka is a distributed partitioned, replicated commit log service. It provides the functionality of a messaging system but with a unique design.
+
+Kafka is distributed and highly scalable.
+It can grow elastically and transparently with no downtime. Kafka allows partition data streams and spread messages over a cluster of machines which allows data streams larger than a single machine could handle.
+
+Kafka use cases
+
+Messaging
+Website Activity Tracking
+Metrics
+Log aggregation
+stream processing
+
+Main kafka concepts
+
+Topics - feeds of messages are orgained into topics
+
+Brokers - kafka runs on a cluster of servers
+
+Producers - Processes that publish messages to a kafka topic
+
+Consumers - Processes that subscribe to topics and process the feed of published messages
+

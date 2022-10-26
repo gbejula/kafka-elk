@@ -1,0 +1,57 @@
+KAFKA INSTALLATION DETAILS
+
+
+1. Download from apache kafka website.
+
+2. Extra the folder and rename the folder to kafka
+
+3. Open the directory kafka --> config --> open file server-properties
+
+edit and use directory path 
+log.dirs=c:/kafka/kafka-logs
+
+Open the directory kafka --> config --> open file zookeeper-properties
+
+edit and use directory path
+dataDir=c:/kafka/zookeeper-data
+
+
+MOVE KAFKA TO ROOT DIRECTORY C:
+
+
+1. START ZOOKEEPER
+
+change to kafka directory = move your kafka folder to c drive
+ 
+Change directory to kafka -->
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+2. START KAFKA ENGINE
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+Create topic files
+
+3. CREATE TOPIC
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic TestTopic
+
+
+4. WRITE TEXT INTO THE NEW TOPIC CREATED USING THE PRODUCER
+
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic TestTopic
+
+prompt will change to ">"
+
+Enter all the text
+
+5. CONSUME THE TEXT AND READ FROM THE BEGINNING.
+
+.\bin\windows\kafka-console.consumer.bat --bootstrap-server localhost:9092 --topic TestTopic --from-beginning
+
+6. LIST THE TOPICS IN KAFKA -- NEW VERSION
+
+.\bin\windows\kafka-topics.sh --list --bootstrap-server localhost:9092

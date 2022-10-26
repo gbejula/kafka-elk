@@ -1,0 +1,20 @@
+# Logstach-kafka connection for input and output
+# logstach file must be saved in conf e.g - logstach-kafka.conf
+
+
+input {
+	kafka {
+		bootstrap_servers => "localhost:9092"
+		topics => ["MetricbeatTutorial.msg"]
+	}
+}
+
+output {
+	elasticsearch {
+		hosts => ["localhost:9200"]
+		index => "MetricbeatTutorial.msg"
+	}
+	stdout { codec => rubydebug }
+}
+
+
