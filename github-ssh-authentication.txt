@@ -1,0 +1,18 @@
+Open command line and enter the following commands
+
+1. ssh-keygen -t ed25519 -C gbejula
+Press enter to save the key in default location
+2. Press enter twice to accept the defaults
+3. eval "$(ssh-agent -s)"
+4. ~/.ssh/config - if it does not exist, then create it
+5. touch ~/.ssh/config
+6. vim ~/.ssh/config
+7. Host * 
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/id_ed25519
+8. Save the vim file with (:wq)
+9. enter ssh-add ~/.ssh/id_ed25519
+10. Go to github setting, click SSH & GPG to open
+11. type cat ~/.ssh/id_ed25519.pub in command line to generate key. Enter the key into the ssh box in github.
+12. In command line type - ssh -T git@github.com, once you get a success, then keys is successfully added. 
+13.
